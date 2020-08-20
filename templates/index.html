@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vocular</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+		<!--Page css-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/fixed.css')}}">
+	</head>
+    <body>
+
+        <!--- Start home section --->
+        <div id="home">
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="#">Vocular <i class="fa fa-microphone" aria-hidden="true"></i></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#start">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul> 
+                </div>
+            </nav>
+            <!-- End Navigation -->
+
+            <!-- Start Landing page section -->
+            <div class="landing">
+                <div class="home-wrap">
+                    <div class="home-inner" style="background-image: url('{{url_for('static', filename='img/smiley.jpg')}}')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="caption text-center">
+                <h1>Welcome to Vocular</h1>
+                <h3>A smart system for emotion analyser</h3>
+                <a class="btn btn-outline-light btn-lg" href="#start">Get started</a>
+            </div>
+            <!-- End Landing page Section -->
+        </div>
+        <!--End home section-->
+
+        <!--- Start start section --->
+        <div id="start" class="offset">
+            <div id="soundrec">
+                <div id="controls">
+                    <i class="fa fa-microphone fa-10x micicon" aria-hidden="true"></i>
+                    <h3>Record Audio</h3>
+                    <button class="btn btn-danger" id="recordButton">Record</button>
+                    <button class="btn btn-danger" id="pauseButton" disabled>Pause</button>
+                    <button class="btn btn-danger" id="stopButton" disabled>Stop</button>
+                </div>
+                 <div id="formats">Format: start recording to see sample rate</div>
+                   <p><strong>Recordings:</strong></p>
+                   <ol id="recordingsList"></ol>        
+            </div>
+            <div id="chatbot">
+                <i class="fa fa-comments fa-9x chaticon" aria-hidden="true"></i>
+                <h3>NLP chatbot</h3>
+                <a class="btn btn-danger btn-md" href="#" target="_blank">Start chat</a>
+            </div>
+        </div>
+        <!--End start section -->
+
+        <!--- Start about section --->
+        <div id="about" class="offset">
+            <!-- Start Jumbotron -->
+            <div class="jumbotron">
+                <div class="narrow">
+                    <div class="col-12 text-center">
+                        <h3 class="heading">About Vocular</h3>
+                        <div class="heading-underline"></div>
+                        <p style="letter-spacing: 2px; text-align: center;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna. Nam eget eros non orci consectetur congue at ac augue. Proin eget arcu in enim feugiat ultricies. Curabitur maximus metus nec metus pretium viverra at et orci. Integer hendrerit ante ut placerat cursus.
+                       </p>
+                       <p style="letter-spacing: 2px; text-align: center;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna. Nam eget eros non orci consectetur congue at ac augue. Proin eget arcu in enim feugiat ultricies. Curabitur maximus metus nec metus pretium viverra at et orci. Integer hendrerit ante ut placerat cursus.
+                    </p>
+                    </div>
+                </div>
+                <!-- End Narrow -->
+            </div>
+            <!-- End jumbotron -->   
+        </div>
+        <!--End about section-->
+
+        <!--- Start features section --->
+        <div id="features" class="offset">
+            <div class="fixed-background">
+                <div class="row dark text-center">
+                    <div class="col-12">
+                        <h3 class="heading">Features</h3>
+                        <div class="heading-underline"></div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>Options</h3>
+                        <div class="feature">
+                            <i class="fa fa-microphone fa-3x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-comments fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <p class="lead">You can record your voice or you can chat.</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>Accuracy</h3>
+                        <div class="feature">
+                            <strong style="font-size: 32px;">85%</strong>
+                        </div>
+                        <p class="lead">Improving Accuracy Everyday.</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>Recommendations</h3>
+                        <div class="feature">
+                            <i class="fa fa-book fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-play fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-music fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <p class="lead">Books, videos, songs and many more recommendations for users.</p>
+                    </div>
+                </div>
+                <!-- End Row Dark -->
+                <div class="fixed-wrap">
+                    <div class="fixed" style="background-image: url('{{url_for('static', filename='img/computers.jpg')}}')">
+
+                    </div>
+                </div>
+            </div>
+            <!-- End fixed background -->
+        </div>
+        <!--End features section-->
+
+        <!--- Start Contact section --->
+        <div id="contact" class="offset">
+            <footer>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 text-center">
+                        <h1>Vocular <i class="fa fa-microphone" aria-hidden="true"></i></h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                            remaining essentially unchanged.
+                        </p>
+                        <strong>Contact Info</strong>
+                        <p>+91 8750660769<br>vthakur412000@gmail.com</p>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <hr class="socket">
+                    &copy; Theme made by Vikas Thakur. All Rights Reserved.
+                </div>
+            </footer>
+        </div>
+        <!--End Contact section-->
+
+    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+  	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+  	<script src="{{url_for('static', filename='js/app.js')}}"></script>
+    </body>
+</html>
