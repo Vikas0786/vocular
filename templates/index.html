@@ -66,8 +66,9 @@
         </div>
         <!--End home section-->
 
-        <!--- Start start section --->
+        <!--- Start start section -->
         <div id="start" class="offset">
+            
             <div id="soundrec">
                 <div id="controls">
                     <i class="fa fa-microphone fa-10x micicon" aria-hidden="true"></i>
@@ -76,19 +77,23 @@
                     <button class="btn btn-danger" id="pauseButton" disabled>Pause</button>
                     <button class="btn btn-danger" id="stopButton" disabled>Stop</button>
                 </div>
-                 <div id="formats">Format: start recording to see sample rate</div>
+                 <div id="formats">Start recording to see the predictions: </div>
                    <p><strong>Recordings:</strong></p>
                    <ol id="recordingsList"></ol>        
             </div>
             <div id="chatbot">
-                <i class="fa fa-comments fa-9x chaticon" aria-hidden="true"></i>
-                <h3>NLP chatbot</h3>
-                <a class="btn btn-danger btn-md" target="_blank">Start chat</a>
+                <i class="fas fa-upload fa-9x chaticon" aria-hidden="true"></i>
+                <h3 class="mt-2">Upload an Audio File</h3>
+                <form action="/prediction" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" />
+                    <!-- <a class="btn btn-danger btn-md" href="/prediction">Upload</a> -->
+                    <input type="submit" class="btn btn-danger btn-md" id="submitButton" value="Upload"/>
+                </form>
             </div>
         </div>
         <!--End start section -->
 
-        <!--- Start about section --->
+        <!--- Start about section -->
         <div id="about" class="offset">
             <!-- Start Jumbotron -->
             <div class="jumbotron">
@@ -112,7 +117,7 @@ As a result of the emotion that is recognized, the application suggests some thi
         </div>
         <!--End about section-->
 
-        <!--- Start features section --->
+        <!--- Start features section -->
         <div id="features" class="offset">
             <div class="fixed-background">
                 <div class="row dark text-center">
@@ -156,7 +161,7 @@ As a result of the emotion that is recognized, the application suggests some thi
         </div>
         <!--End features section-->
 
-        <!--- Start Contact section --->
+        <!--- Start Contact section -->
         <div id="contact" class="offset">
             <footer>
                 <div class="row justify-content-center">

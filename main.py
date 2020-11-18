@@ -11,16 +11,6 @@ def home():
             f.save(audio)
         print('file uploaded successfully')
         return redirect("/pred")
-
-        # pred = livePredictions(path='SER_model.h5',file='audio.wav')
-        # pred.load_model()
-        # prediction = pred.makepredictions()
-        # print(prediction)
-        # if(prediction=='calm'):
-        # 	return redirect("/disgust")
-        # if(prediction=='disgust'):
-        # 	return redirect("/disgust")
-        # print("abc")
     
     return render_template('index.html')
 
@@ -47,6 +37,35 @@ def pred():
     if(prediction=='neutral'):
         return redirect("/happy")
     return "Hello"
+
+@app.route('/prediction', methods=["GET","POST"])
+def prediction():
+    if request.method == "POST":
+        print("FORM DATA RECEIVED")
+        file1 = request.files["file"]
+        pred = livePredictions(path='SER_model.h5',file=file1)
+        pred.load_model()
+        prediction = pred.makepredictions()
+        print(prediction)
+        if(prediction=='calm'):
+            return redirect("/happy")
+        if(prediction=='disgust'):
+            return redirect("/disgust")
+        if(prediction=='angry'):
+            return redirect("/angry")
+        if(prediction=='fearful'):
+            return redirect("/fearful")
+        if(prediction=='happy'):
+            return redirect("/happy")
+        if(prediction=='surprised'):
+            return redirect("/surprised")
+        if(prediction=='sad'):
+            return redirect("/sad")
+        if(prediction=='neutral'):
+            return redirect("/happy")
+        return "Hello"
+
+    return "Hey"
 
 @app.route('/disgust', methods=["GET","POST"])
 def disgust():    
