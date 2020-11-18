@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vocular - Sad</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+		<!--Page css-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/fixed.css')}}">
+		<style>
+			.card-wrapper {
+			margin-bottom: 30px;
+			}
+			.card-image .card .card-img-wrapper {
+			height: 100%;
+			}
+			.card-image .card .card-body {
+			display: none;
+			}
+			.card-image-title-description .card .card-img-wrapper {
+			max-height: 160px;
+			}
+			.card-image-title-description .card {
+			position: relative;
+			min-height: 300px;
+			}
+			.card-image-title-description .card .card-body {
+			height: auto;
+			position: relative;
+			top: 0;
+			margin-bottom: -70px;
+			}
+			.card-image-title-description .card:hover .card-body {
+			top: -70px;
+			}
+			.card-image-title-description .card .card-body .card-title {
+			margin-bottom: .75rem;
+			}
+			.card {
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			min-height: 400px;
+			height: 100%;
+			}
+			.card:hover {
+			box-shadow: 8px 12px 31px -10px #ab98ab;
+			}
+			.card-img-wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 50%;
+			overflow: hidden;
+			}
+			.card-img-wrapper img {
+			transition: 1.5s ease;
+			}
+			.card:hover .card-img-wrapper img {
+			transform: scale(1.15);
+			}
+			.card-body .card-title {
+			margin-bottom: calc(50% + 20px);
+			transition: 1.5s ease;
+			}
+			.card:hover .card-body .card-title {
+			margin-bottom: .75rem;
+			}
+
+			.card-body {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 50%;
+			background-color: #fff;
+			transition: 1.5s ease;
+			}
+			.card-content {
+			left: 0;
+			right: 0;
+			overflow: hidden;
+			width: 100%;
+			height: auto;
+			transition: 1.5s ease;
+			}
+			.card:hover .card-body {
+			height: 80%;
+			}
+			.card:hover .card-content {
+			bottom: 0;
+			}
+			audio { width: 16em; }
+		</style>
+    </head>
+    <body>
+		<div class="main">
+			<div class="alert alert-success" role="alert">
+				<h2 class="text-center"><strong>Voice Analysis Successful !!</strong><br><i>By analysing your voice result shows that you are,</i> <br><strong>SAD</strong></h2>
+			</div>
+			
+			<h3 style="margin-left: 1em;">We have some suggestions for you hope you like them.</h3>
+
+			<div class="bar" style="width: 85em; background-color:lightblue">
+				<p style="font-size: 2em; margin-left: 1em;"><strong>Some Books for you</strong></p>
+			</div>
+
+			<div class="row">
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/noonday.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">The Noonday Demon: An Atlas of Depression by Andrew Solomon</h5>
+						<p class="card-text">Solomon calls his book "An Atlas of Depression" and once you've covered about half of the 688 pages, you start to realize why: this is everything you would ever want to know about depression—the personal experience of it.</p>
+						<a href="#" class="btn btn-primary">Read more</a>
+					  </div>
+					</div>
+				  </div>
+				<div class="card-wrapper col-md-3">
+				  <div class="card">
+					<div class="card-img-wrapper">
+					  <img class="card-img-top" src="{{url_for('static', filename='img/first-we-make.jpg')}}" alt="Card image cap">
+					</div>
+					<div class="card-body">
+					  <h5 class="card-title"><br>First, We Make the Beast Beautiful by Sarah Wilson</h5>
+					  <p class="card-text">First, We Make the Beast Beautiful is frenetic and at times, overly-energetic, leaping from story to story, back ten years to ahead five years to childhood to imagined old age, from personal disaster to scientific research.</p>
+					  <a href="#" class="btn btn-primary">Read more</a>
+					</div>
+				  </div>
+				</div>
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/feeling-good.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">Feeling Good: The New Mood Therapy by David Burns</h5>
+						<p class="card-text">Burns has done a fantastic job of essentially writing the closest replacement to a real therapist, and as a result, pretty much any time I come across someone who needs a therapist but can’t get one for some reason, this book is the insta-recommendation.</p>
+						<a href="#" class="btn btn-primary">Read more</a>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/self-compassion.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">Self-Compassion: The Proven Power of Being Kind to Yourself by Kristin Neff</h5>
+						<p class="card-text">Ignore the cheesiness of the title here. Self-compassion is the answer to every time you've ever heard someone say, "hey, don't be so hard on yourself," without any explanation of how to not be so hard on yourself.</p>
+						<a href="#" class="btn btn-primary">Read more</a>
+					  </div>
+					</div>
+				  </div>
+			  </div>
+
+			  <div class="bar" style="width: 85em; background-color:lightblue;">
+				<p style="font-size: 2em; margin-left: 1em;"><strong>Some Quotations for you</strong></p>
+			</div>
+
+			<div class="row">
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/SQ1.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body"><br><br><br>
+						<h5 class="card-title">"Whenever you feel sad just remember that there are billions of cells in your body and all they care about is you."</h5>
+					  </div>
+					</div>
+				  </div>
+				<div class="card-wrapper col-md-3">
+				  <div class="card">
+					<div class="card-img-wrapper">
+					  <img class="card-img-top" src="{{url_for('static', filename='img/SQ2.png')}}" alt="Card image cap">
+					</div>
+					<div class="card-body"><br><br><br>
+					  <h5 class="card-title">"Somedays you just have to create your own sunshine"</h5>
+					</div>
+				  </div>
+				</div>
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/SQ3.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body"><br><br><br>
+						<h5 class="card-title">"Look Up and Step Up you will Cheer Up"</h5>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/SQ4.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body"><br><br><br>
+						<h5 class="card-title">"Be Happy!! Not because everything is Good but because you can See Good in Everything"</h5>
+					  </div>
+					</div>
+				  </div>
+			  </div>
+
+			  <div class="bar" style="width: 85em; background-color:lightblue;">
+				<p style="font-size: 2em; margin-left: 1em;"><strong>Some Songs for you</strong></p>
+				</div>
+
+			<div class="row">
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/music.png')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">All of the Stars - Ed Sheeran</h5><br>
+						<a href="#" class="btn btn-primary">Play Now&nbsp;<i class="fas fa-arrow-down"></i></a><br><br>
+						<audio controls>
+							<source src="{{url_for('static', filename='audio/All Of The Stars - Ed Sheeran.mp3')}}" type="audio/ogg">
+						  Your browser does not support the audio element.
+						</audio>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/music.png')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">I am Beautiful - Christina Aguilera</h5>
+						<a href="#" class="btn btn-primary">Play Now&nbsp;<i class="fas fa-arrow-down"></i></a><br><br>
+						<audio controls>
+							<source src="{{url_for('static', filename='audio/I Am Beautiful.mp3')}}" type="audio/ogg">
+						  Your browser does not support the audio element.
+						</audio>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/music.png')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">Don't Stop Believin' - Journey</h5><br>
+						<a href="#" class="btn btn-primary">Play Now&nbsp;<i class="fas fa-arrow-down"></i></a><br><br>
+						<audio controls>
+							<source src="{{url_for('static', filename='audio/Journey_-_Dont_Stop_Believin_Audio[ClipConverter.video].mp3')}}" type="audio/ogg">
+						  Your browser does not support the audio element.
+						</audio>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/music.png')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">Inner Demons - Julia Brennan</h5><br>
+						<a href="#" class="btn btn-primary">Play Now&nbsp;<i class="fas fa-arrow-down"></i></a><br><br>
+						<audio controls>
+							<source src="{{url_for('static', filename='audio/Julia Brennan - Inner Demons.mp3')}}" type="audio/ogg">
+						  Your browser does not support the audio element.
+						</audio>
+					  </div>
+					</div>
+				  </div>
+			  </div>
+
+			  <div class="bar" style="width: 85em; background-color:lightblue;">
+				<p style="font-size: 2em; margin-left: 1em;"><strong>Some Videos you may like</strong></p>
+				</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/PppkNH3bKV4" 
+						frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+						gyroscope; picture-in-picture" allowfullscreen style="margin-left: 2em;">
+					</iframe>
+				</div>
+				<div class="col-md-6">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/2GVx0mLT4QI" 
+						frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+						gyroscope; picture-in-picture" allowfullscreen>
+					</iframe>
+				</div>
+				<div class="col-md-6">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/ZebSXPUCPFc" 
+					frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+					gyroscope; picture-in-picture" allowfullscreen style="margin-left: 2em;"></iframe>
+				</div>
+				<div class="col-md-6">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/O-6f5wQXSu8" 
+						frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+						gyroscope; picture-in-picture" allowfullscreen>
+					</iframe>
+				</div>
+			  </div>
+		</div>
+    </body>
+</html>

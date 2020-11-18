@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vocular - Angry</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+		<!--Page css-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/fixed.css')}}">
+		<style>
+			.card-wrapper {
+			margin-bottom: 30px;
+			}
+			.card-image .card .card-img-wrapper {
+			height: 100%;
+			}
+			.card-image .card .card-body {
+			display: none;
+			}
+			.card-image-title-description .card .card-img-wrapper {
+			max-height: 160px;
+			}
+			.card-image-title-description .card {
+			position: relative;
+			min-height: 300px;
+			}
+			.card-image-title-description .card .card-body {
+			height: auto;
+			position: relative;
+			top: 0;
+			margin-bottom: -70px;
+			}
+			.card-image-title-description .card:hover .card-body {
+			top: -70px;
+			}
+			.card-image-title-description .card .card-body .card-title {
+			margin-bottom: .75rem;
+			}
+			.card {
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			min-height: 400px;
+			height: 100%;
+			}
+			.card:hover {
+			box-shadow: 8px 12px 31px -10px #ab98ab;
+			}
+			.card-img-wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 50%;
+			overflow: hidden;
+			}
+			.card-img-wrapper img {
+			transition: 1.5s ease;
+			}
+			.card:hover .card-img-wrapper img {
+			transform: scale(1.15);
+			}
+			.card-body .card-title {
+			margin-bottom: calc(50% + 20px);
+			transition: 1.5s ease;
+			}
+			.card:hover .card-body .card-title {
+			margin-bottom: .75rem;
+			}
+
+			.card-body {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 50%;
+			background-color: #fff;
+			transition: 1.5s ease;
+			}
+			.card-content {
+			left: 0;
+			right: 0;
+			overflow: hidden;
+			width: 100%;
+			height: auto;
+			transition: 1.5s ease;
+			}
+			.card:hover .card-body {
+			height: 80%;
+			}
+			.card:hover .card-content {
+			bottom: 0;
+			}
+			audio { width: 16em; }
+		</style>
+    </head>
+    <body>
+		<div class="main">
+			<div class="alert alert-success" role="alert">
+				<h2 class="text-center"><strong>Voice Analysis Successful !!</strong><br><i>By analysing your voice result shows that you are,</i> <br><strong>ANGRY</strong></h2>
+			</div>
+			
+			<h3 style="margin-left: 1em;">We have some suggestions for you hope you like them.</h3>
+
+			<div class="bar" style="width: 85em; background-color:lightblue">
+				<p style="font-size: 2em; margin-left: 1em;"><strong>Some Books for you</strong></p>
+			</div>
+
+			<div class="row">
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/anger.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">Anger: Taming a Powerful Emotion - Gary Chapman</h5><br>
+						<p class="card-text">Many angry people say "I don't get angry because I can't control myself; others push my buttons.", this book can teach you how to turn anger's energy into self-acceptance energy.</p>
+						<a href="#" class="btn btn-primary">Read more</a>
+					  </div>
+					</div>
+				  </div>
+				<div class="card-wrapper col-md-3">
+				  <div class="card">
+					<div class="card-img-wrapper">
+					  <img class="card-img-top" src="{{url_for('static', filename='img/angertrap.jpg')}}" alt="Card image cap">
+					</div>
+					<div class="card-body">
+					  <h5 class="card-title">The Anger Trap: Free Yourself from the Frustrations that Sabotage Your Life - Les Carter, Frank Minirth</h5>
+					  <p class="card-text">Understand your anger so that it gets more comfortable for you to put a leash on it. The traps anger plants in your mind to keep you hostage. Do you want to get to calm? Learn how to change your mind</p>
+					  <a href="#" class="btn btn-primary">Read more</a>
+					</div>
+				  </div>
+				</div>
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/rage.png')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">Rage: A Step-by-Step Guide to Overcoming Explosive Anger - Ronald Potter-Efron MSW Ph.D.</h5>
+						<p class="card-text">Being a calm and collected person is not a matter of nature, but nurture. It's a skill that you learn, practice, and improve. You can help yourself… more than anyone else can help you.</p>
+						<a href="#" class="btn btn-primary">Read more</a>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/the-surprising-purpose-of-anger.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">The Surprising Purpose of Anger: Beyond Anger Management: Finding the Gift (Nonviolent Communication Guides) - Marshall B. Rosenberg Ph.D.</h5>
+						<p class="card-text">Discover in this book how to find what are the winds that can make you lose your cool and how to windproof yourself.</p>
+						<a href="#" class="btn btn-primary">Read more</a>
+					  </div>
+					</div>
+				  </div>
+			  </div>
+
+			  <div class="bar" style="width: 85em; background-color:lightblue;">
+				<p style="font-size: 2em; margin-left: 1em;"><strong>Some Quotations for you</strong></p>
+			</div>
+
+			<div class="row">
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/AQ1.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body"><br><br><br>
+						<h5 class="card-title">"Do not get upset with people or situations, both are powerless without your reaction."</h5>
+					  </div>
+					</div>
+				  </div>
+				<div class="card-wrapper col-md-3">
+				  <div class="card">
+					<div class="card-img-wrapper">
+					  <img class="card-img-top" src="{{url_for('static', filename='img/AQ2.jpg')}}" alt="Card image cap">
+					</div>
+					<div class="card-body"><br><br><br>
+					  <h5 class="card-title">"Give yourself permissions to feel anger, pain and resentment. Relax, than let it go with love."</h5>
+					</div>
+				  </div>
+				</div>
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/AQ3.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body"><br><br><br>
+						<h5 class="card-title">"If you are patient in one moment of anger, you will escape you will escape a hundred days of sorrow."</h5>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/AQ4.jpg')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body"><br><br><br>
+						<h5 class="card-title">"For every minute you remain angry, you give up sixty seconds of peaceful mind."</h5>
+					  </div>
+					</div>
+				  </div>
+			  </div>
+
+			  <div class="bar" style="width: 85em; background-color:lightblue;">
+				<p style="font-size: 2em; margin-left: 1em;"><strong>Some Songs for you</strong></p>
+				</div>
+
+			<div class="row">
+				<div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/music.png')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">All of the Stars - Ed Sheeran</h5><br>
+						<a href="#" class="btn btn-primary">Play Now&nbsp;<i class="fas fa-arrow-down"></i></a><br><br>
+						<audio controls>
+							<source src="{{url_for('static', filename='audio/All Of The Stars - Ed Sheeran.mp3')}}" type="audio/ogg">
+						  Your browser does not support the audio element.
+						</audio>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/music.png')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">I am Beautiful - Christina Aguilera</h5>
+						<a href="#" class="btn btn-primary">Play Now&nbsp;<i class="fas fa-arrow-down"></i></a><br><br>
+						<audio controls>
+							<source src="{{url_for('static', filename='audio/I Am Beautiful.mp3')}}" type="audio/ogg">
+						  Your browser does not support the audio element.
+						</audio>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/music.png')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">Don't Stop Believin' - Journey</h5><br>
+						<a href="#" class="btn btn-primary">Play Now&nbsp;<i class="fas fa-arrow-down"></i></a><br><br>
+						<audio controls>
+							<source src="{{url_for('static', filename='audio/Journey_-_Dont_Stop_Believin_Audio[ClipConverter.video].mp3')}}" type="audio/ogg">
+						  Your browser does not support the audio element.
+						</audio>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card-wrapper col-md-3">
+					<div class="card">
+					  <div class="card-img-wrapper">
+						<img class="card-img-top" src="{{url_for('static', filename='img/music.png')}}" alt="Card image cap">
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title">Inner Demons - Julia Brennan</h5><br>
+						<a href="#" class="btn btn-primary">Play Now&nbsp;<i class="fas fa-arrow-down"></i></a><br><br>
+						<audio controls>
+							<source src="{{url_for('static', filename='audio/Julia Brennan - Inner Demons.mp3')}}" type="audio/ogg">
+						  Your browser does not support the audio element.
+						</audio>
+					  </div>
+					</div>
+				  </div>
+			  </div>
+
+			  <div class="bar" style="width: 85em; background-color:lightblue;">
+				<p style="font-size: 2em; margin-left: 1em;"><strong>Some Videos you may like</strong></p>
+				</div>
+
+			<div class="row">
+				<div class="col-md-6">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/M_EVrdW9GK8" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                        gyroscope; picture-in-picture" allowfullscreen style="margin-left: 2em;">
+                    </iframe>
+				</div>
+				<div class="col-md-6">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/sJH6_ZbgeWQ" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                        gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+				</div>
+				<div class="col-md-6">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BsVq5R_F6RA" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                        gyroscope; picture-in-picture" allowfullscreen style="margin-left: 2em;">
+                    </iframe>
+				</div>
+				<div class="col-md-6">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QAsJvKsd2Xk" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                        gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+				</div>
+			  </div>
+		</div>
+    </body>
+</html>
